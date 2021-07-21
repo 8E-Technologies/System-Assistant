@@ -1,0 +1,1 @@
+Discord = require('discord.js');
