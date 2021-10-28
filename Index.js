@@ -23,15 +23,15 @@ Client.on('message', async (message) => {
   Arguments = message.content.slice(Prefix.length).split(/ +/);
   Command = Arguments.shift();
   
-  if (Command === 'help') {Client.commands.get('Help').execute(message)} // Help.js
-  if (Command === 'information') {Client.commands.get('Information').execute(message)} // Information.js
-  if (Command === 'protection') {Client.commands.get('Protection').execute(message)} // Protection.js
-  if (Command === 'settings') {Client.commands.get('Settings').execute(message)} // Settings.js
-  if (Command === 'ban') {Client.commands.get('Ban').execute(message)} // Ban.js
-  if (Command === 'kick') {Client.commands.get('Kick').execute(message)} // Kick.js
-  if (Command === 'mute') {Client.commands.get('Mute').execute(message)} // Mute.js
-  if (Command === 'respect') {Client.commands.get('Respect').execute(message)} // Respect.js
-  if (Command === 'ping') {Client.commands.get('Ping').execute(message)} // Ping.js
+  if (Command === 'help') {Client.commands.get('Help').execute(message)}
+  if (Command === 'information') {Client.commands.get('Information').execute(message)}
+  if (Command === 'protection') {Client.commands.get('Protection').execute(message)}
+  if (Command === 'settings') {Client.commands.get('Settings').execute(message)}
+  if (Command === 'ban') {Client.commands.get('Ban').execute(message)}
+  if (Command === 'kick') {Client.commands.get('Kick').execute(message)}
+  if (Command === 'mute') {Client.commands.get('Mute').execute(message)}
+  if (Command === 'respect') {Client.commands.get('Respect').execute(message)}
+  if (Command === 'ping') {Client.commands.get('Ping').execute(message)}
 
 });
 
