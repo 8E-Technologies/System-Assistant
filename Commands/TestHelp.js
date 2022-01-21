@@ -6,11 +6,7 @@ module.exports = {
 
   name: "help",
 
-  aliases: [""],
-
-  usage: "unban",
-
-  description: "unbans member",
+  description: "",
 
   run: async (client, message, args) => {
 
@@ -101,7 +97,7 @@ module.exports = {
       .setThumbnail("https://cdn.discordapp.com/avatars/876690046487498752/50c204817cd9fc42b1581dcf43042259.webp")
 
       .setImage('https://cdn.discordapp.com/attachments/860775916728352800/882914868838170634/standard.gif')
-
+J
       .setFooter('Bot Made By ZeroNaruto#9000 | Prefix: *')
 
     let embed6 = new Discord.MessageEmbed()
