@@ -1,20 +1,19 @@
-Discord = require('discord.js');
+const { Prefix, Token } = process.env;
+
+const { Client, Intents, Collection } = require('discord.js');
+const client = new Client({ intents: new Intents(32767) });
 FileSync = require('fs');
-Client = new Discord.Client();
 
-Prefix = process.env['PREFIX'];
-Token = process.env['TOKEN'];
-
-Client.commands = new Discord.Collection();
+client.commands = new Collection();
 Folder = FileSync.readdirSync('./Commands/');
 Folder.filter(File => File.endsWith('.js'));
 
 for (File of Folder) {
   Command = require(`./Commands/${File}`);
-  Client.commands.set(Command.name, Command);
+  client.commands.set(Command.name, Command);
 }
 
-Client.once('ready', async () => {
+client.once('ready', async () => {
   console.log(`${Client.user.username} Is Online!`);
 });
 
@@ -23,16 +22,42 @@ Client.on('message', async (message) => {
   Arguments = message.content.slice(Prefix.length).split(/ +/);
   Command = Arguments.shift();
   
-  if (Command === 'help') {Client.commands.get('Help').execute(message)}
-  if (Command === 'information') {Client.commands.get('Information').execute(message)}
-  if (Command === 'protection') {Client.commands.get('Protection').execute(message)}
-  if (Command === 'settings') {Client.commands.get('Settings').execute(message)}
-  if (Command === 'ban') {Client.commands.get('Ban').execute(message)}
-  if (Command === 'kick') {Client.commands.get('Kick').execute(message)}
-  if (Command === 'mute') {Client.commands.get('Mute').execute(message)}
-  if (Command === 'respect') {Client.commands.get('Respect').execute(message)}
-  if (Command === 'ping') {Client.commands.get('Ping').execute(message)}
+  if (Command === 'help') {
+    client.commands.get('Help').execute(message)
+  }
+  
+  if (Command === 'information') {
+    client.commands.get('Information').execute(message)
+  }
+  
+  if (Command === 'protection') {
+    client.commands.get('Protection').execute(message)
+  }
+  
+  if (Command === 'settings') {
+    client.commands.get('Settings').execute(message)
+  }
+  
+  if (Command === 'ban') {
+    client.commands.get('Ban').execute(message)
+  }
+  
+  if (Command === 'kick') {
+    client.commands.get('Kick').execute(message)
+  }
+  
+  if (Command === 'mute') {
+    client.commands.get('Mute').execute(message)
+  }
+  
+  if (Command === 'respect') {
+    client.commands.get('Respect').execute(message)
+  }
+  
+  if (Command === 'ping') {
+    client.commands.get('Ping').execute(message)
+  }
 
 });
 
-Client.login(Token);
+client.login(Token);
