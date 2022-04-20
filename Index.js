@@ -17,7 +17,7 @@ client.once('ready', async () => {
   console.log(`${Client.user.username} Is Online!`);
 });
 
-Client.on('message', async (message) => {
+client.on('message', async (message) => {
   if (!message.content.startsWith(Prefix) || message.author.bot) {return}
   Arguments = message.content.slice(Prefix.length).split(/ +/);
   Command = Arguments.shift();
